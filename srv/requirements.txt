@@ -1,0 +1,8 @@
+blinker
+click
+flask
+itsdangerous
+jinja2
+markupsafe
+python-dotenv
+werkzeug
