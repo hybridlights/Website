@@ -23,7 +23,7 @@ def load_jinja_vars():
 
 @app.route('/favicon.ico')
 def favicon():
-    return app.send_static_file('content/imgs/favicon.ico')
+    return app.send_static_file('content/imgs/favicon_temp.ico')
 
 
 @app.route('/')
