@@ -4,10 +4,10 @@
 .env
 
 # venv:
-srv/bin/
-srv/lib/
-srv/lib64
-srv/include/
+**/bin/
+**/lib/
+**/lib64
+**/include/
 pyvenv.cfg
 
 
