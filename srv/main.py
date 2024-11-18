@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
-from flask import Flask, request, Response, render_template, redirect, flash
+from flask import Flask, request, Response, render_template, redirect, flash, get_flashed_messages, jsonify
 from dotenv import load_dotenv
+from pprint import pprint
 import os
 
 load_dotenv()
@@ -23,12 +24,12 @@ def load_jinja_vars():
 
 @app.route('/favicon.ico')
 def favicon():
-    return app.send_static_file('content/imgs/favicon_temp.ico')
+    return app.send_static_file('assets/imgs/favicon_temp.ico')
 
 
 @app.route('/')
 def root():
-    return redirect('/home', code=302)
+    return redirect('/home', code=301)
 
 @app.route('/home')
 def index():
@@ -42,7 +43,42 @@ def contact():
 
 @app.route('/verhuur')
 def verhuur():
+    flash('Deze pagina is nog in ontwikkeling')
+    return redirect('/home', code=302)
     return render_template('verhuur.html')
+
+
+@app.route('/get-flashed-messages', methods=['GET', 'POST'])
+def flash_messages():
+
+    options = [
+        'with-categories',
+        'category-filter'
+    ]
+
+    if request.args:
+        kwargs = dict(request.args)
+    else:
+        kwargs = dict()
+
+    if request.headers:
+        for key, value in dict(request.headers).items():
+            key = key.lower()
+            if key in options:
+                kwargs[key.replace('-', '_')] = value
+
+    if kwargs.get('with_categories'):
+        flash_messages = []
+        for category, message in get_flashed_messages(**kwargs):
+            flash_messages.append({'message': message, 'category': category})
+            # TODO: add proper logging
+            pprint(flash_messages)
+        
+        return jsonify(flash_messages)
+
+    return jsonify(get_flashed_messages(**kwargs))
+
+
 
 
 

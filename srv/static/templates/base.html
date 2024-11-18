@@ -6,14 +6,34 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}{% endblock %}</title>
+        <title>{% block title %}{% endblock %} - Hybridlights</title>
+
+        <link rel="stylesheet" href="static/styles/base.css">
+
         {% block head %}
             
         {% endblock %}
     </head>
+
     <body>
-        {{version}}
-        {% block content %}{% endblock %}
+        <header>
+            <!-- <img src="static/content/imgs/logo-dark-2x1.png"> -->
+
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/verhuur">Verhuur</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </header>
+
+        {% block content %}
+
+        
+        {% endblock %}
+
+        <script src="static/scripts/base.js"></script>
+        <script src="static/scripts/notifications.js"></script>
+
         {% block js %}
             
         {% endblock %}
