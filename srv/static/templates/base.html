@@ -1,19 +1,21 @@
 
 
-<DOCTYPE html>
+
+
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{% block title %}{% endblock %}</title>
-    {% block head %}
-        
-    {% endblock %}
-</head>
-<body>
-    {{version}}
-    {% block content %}{% endblock %}
-    {% block js %}
-        
-    {% endblock %}
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}{% endblock %}</title>
+        {% block head %}
+            
+        {% endblock %}
+    </head>
+    <body>
+        {{version}}
+        {% block content %}{% endblock %}
+        {% block js %}
+            
+        {% endblock %}
+    </body>
 </html>
