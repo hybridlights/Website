@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from flask import Flask, request, Response, render_template, redirect 
+from flask import Flask, request, Response, render_template, redirect, flash
 from dotenv import load_dotenv
 import os
 
@@ -28,17 +28,21 @@ def favicon():
 
 @app.route('/')
 def root():
-    return redirect('/index.html', code=302)
+    return redirect('/home', code=302)
 
-@app.route('/index.html')
+@app.route('/home')
 def index():
     return render_template('index.html')
 
 
-@app.route('/contact')
+@app.route('/contact', methods=['GET', 'POST'])
 def contact():
     return render_template('contact.html')
 
+
+@app.route('/verhuur')
+def verhuur():
+    return render_template('verhuur.html')
 
 
 
