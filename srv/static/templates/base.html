@@ -8,34 +8,45 @@
         <meta charset="UTF-8">
         <title>{% block title %}{% endblock %} - Hybridlights</title>
 
+        <!-- css -->
         <link rel="stylesheet" href="static/styles/base.css">
 
         {% block head %}
-            
         {% endblock %}
+
     </head>
 
     <body>
-        <header>
-            <!-- <img src="static/content/imgs/logo-dark-2x1.png"> -->
+        <header class="flex-horz flex-between">
+            <img class="header-img" src="static/assets/imgs/logo-dark-2x1.png"> 
 
-            <ul>
-                <li><a href="/home">Home</a></li>
-                <li><a href="/verhuur">Verhuur</a></li>
-                <li><a href="/contact">Contact</a></li>
+            <ul class="flex-horz flex-around">
+                <li class="li-no-dot"><a href="/home" class="no-decoration">Home</a></li>
+                <li class="li-no-dot"><a href="/verhuur" class="no-decoration">Verhuur</a></li>
+                <li class="li-no-dot"><a href="/contact" class="no-decoration">Contact</a></li>
             </ul>
+
         </header>
 
-        {% block content %}
+        <main>
 
-        
+        {% block content %}
         {% endblock %}
 
+        </main>
+
+        <footer>
+            footer
+        </footer>
+
+
+
+        <!-- js -->
         <script src="static/scripts/base.js"></script>
         <script src="static/scripts/notifications.js"></script>
 
         {% block js %}
-            
         {% endblock %}
+
     </body>
 </html>

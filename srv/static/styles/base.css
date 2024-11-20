@@ -1,4 +1,58 @@
-html body {
+html, body {
     padding: 0;
     margin: 0;
+    height: 100%;
+}
+
+html {
+    overflow: hidden;
+}
+
+body {
+    overflow-y: auto;
+    overflow-x: hidden; /* prevent horizontal scroll */
+    overscroll-behavior: none;
+}
+
+header {
+    background-color: skyblue;
+    height: 10vh;
+    position: sticky;
+    top: 0;
+    transition: height 0.3s ease;
+}
+
+footer {
+    background-color: skyblue;
+    height: 50vh;
+
+}
+
+.main-block {
+    height: 70vh;
+}
+
+.header-img {
+    height: 100%;
+}
+
+.flex-horz {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-between {
+    justify-content: space-between;
+}
+
+.flex-around {
+    justify-content: space-around;
+}
+
+.no-decoration {
+    text-decoration: none;
+}
+
+.li-no-dot {
+    list-style-type: none;
 }

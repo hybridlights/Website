@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
 
-from flask import Flask, request, Response, render_template, redirect, flash, get_flashed_messages, jsonify
+from flask import Flask, request, Response, render_template, redirect, flash, \
+                  get_flashed_messages, jsonify
 from dotenv import load_dotenv
 from pprint import pprint
+
 import os
 
+
+
 load_dotenv()
-
-
 
 VERSION = os.environ.get('VERSION')
 
