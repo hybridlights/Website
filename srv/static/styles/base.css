@@ -18,7 +18,8 @@ header {
     background-color: skyblue;
     height: 10vh;
     position: sticky;
-    top: 0;
+    top: -1px; /* prevent a 1px gap just aoove the header */
+    z-index: 1000;
     transition: height 0.3s ease;
 }
 
