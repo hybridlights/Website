@@ -16,17 +16,21 @@ body {
 
 header {
     background-color: skyblue;
-    height: 10vh;
+    height: 20vh;
     position: sticky;
     top: -1px; /* prevent a 1px gap just aoove the header */
     z-index: 1000;
-    transition: height 0.3s ease;
+    transition: height 0.4s ease;
 }
 
 footer {
     background-color: skyblue;
     height: 50vh;
+    flex-shrink: 0;
+}
 
+main {
+    flex-grow: 1;
 }
 
 .main-block {
@@ -40,6 +44,11 @@ footer {
 .flex-horz {
     display: flex;
     flex-direction: row;
+}
+
+.flex-vert {
+    display: flex;
+    flex-direction: column;
 }
 
 .flex-between {
