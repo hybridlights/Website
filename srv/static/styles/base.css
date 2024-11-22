@@ -12,10 +12,11 @@ body {
     overflow-y: auto;
     overflow-x: hidden; /* prevent horizontal scroll */
     overscroll-behavior: none;
+    font-family: monospace;
 }
 
 header {
-    background-color: skyblue;
+    background-color: black;
     height: 20vh;
     position: sticky;
     top: -1px; /* prevent a 1px gap just aoove the header */
@@ -31,6 +32,19 @@ footer {
 
 main {
     flex-grow: 1;
+}
+
+nav {
+    width: 50vw;
+}
+
+.nav-item {
+    color: white;
+    font-size: 3rem;
+    height: 100%;
+    border: 3px solid white;
+    border-radius: 5px;
+    padding: 0 10px 0 10px;
 }
 
 .main-block {
@@ -59,7 +73,10 @@ main {
     justify-content: space-around;
 }
 
-.no-decoration {
+.no-decoration:hover,
+.no-decoration:visited,
+.no-decoration:link,
+.no-decoration:active {
     text-decoration: none;
 }
 
